@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>BeeFlix</title>
-  <link rel="stylesheet" href="fonts/font-awesome.min.css">
+  <link rel="stylesheet" href="../fonts/font-awesome.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
     crossorigin="anonymous">
 </head>
@@ -27,7 +27,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{url('/all')}}">LIHAT SEMUA FILM</a>
+          <a class="nav-link" href="favorite.html">LIHAT SEMUA FILM</a>
         </li>
       </ul>
     </div>
@@ -38,7 +38,7 @@
 
     <!-- search bar -->
     {{-- <div class="row" id="search-bar">
-      <form class="form-inline">
+      <form class="form-inline">ssxdfbsz{{url('/')}}
         <label class="sr-only" for="inlineFormInputName2">Name</label>
         <input type="text" class="form-control mb-2 mr-sm-2" id="search" placeholder="search name ...">
         <button type="submit" class="btn btn-primary mb-2" id="submit-search">Search</button>
@@ -53,54 +53,18 @@
 
     <div class="clearfix"></div> --}}
 
-    <h1>Drama</h1>
+    <h1>{{$category[0]->name}}</h1>
     <div class="row">
         {{-- Drama --}}
-        @foreach($data['movies']['drama'] as $d)
+        @foreach($movies as $m)
         <div class="col-sm-3">
             <div class="card mb-2 size">
-                <img class="card-img-top " src="images/{{$d->photo}}" width="400" height="400">
+                <img class="card-img-top " src="../images/{{$m->photo}}" width="400" height="400">
                 <div class="card-body movie-item-body ">
-                    <h5 class="card-title">{{$d->title}}</h5>
+                    <h5 class="card-title">{{$m->title}}</h5>
                 </div>
                 <div class="card-footer">
-                    <a href="{{url('/'.$d->id.'/show')}}">LIHAT FILM</a>
-                </div>
-            </div>
-        </div>
-        @endforeach
-    </div>
-
-    <h1>Kids</h1>
-    <div class="row">
-        {{-- Drama --}}
-        @foreach($data['movies']['kids'] as $k)
-        <div class="col-sm-3">
-            <div class="card mb-2 size">
-                <img class="card-img-top " src="images/{{$k->photo}}" width="400" height="400">
-                <div class="card-body movie-item-body ">
-                    <h5 class="card-title">{{$k->title}}</h5>
-                </div>
-                <div class="card-footer">
-                    <a href="{{url('/'.$k->id.'/show')}}">LIHAT FILM</a>
-                </div>
-            </div>
-        </div>
-        @endforeach
-    </div>
-
-    <h1>TV Show</h1>
-    <div class="row">
-        {{-- Drama --}}
-        @foreach($data['movies']['tvShow'] as $t)
-        <div class="col-sm-3">
-            <div class="card mb-2 size">
-                <img class="card-img-top " src="images/{{$t->photo}}" width="400" height="400">
-                <div class="card-body movie-item-body ">
-                    <h5 class="card-title">{{$t->title}}</h5>
-                </div>
-                <div class="card-footer">
-                    <a href="{{url('/'.$t->id.'/show')}}">LIHAT FILM</a>
+                    <a href="{{url('/'.$m->id.'/show')}}">LIHAT FILM</a>
                 </div>
             </div>
         </div>

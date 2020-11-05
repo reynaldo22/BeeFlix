@@ -27,7 +27,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{url('/all')}}">LIHAT SEMUA FILM</a>
+          <a class="nav-link" href="favorite.html">LIHAT SEMUA FILM</a>
         </li>
       </ul>
     </div>
